@@ -1,5 +1,7 @@
 # AI Chatbot
 
+A simple, universal support-chatbot interface with two agent views: food delivery support and transport support. The current implementation is UI-only and does not include chatbot, API, or backend logic.
+
 An AI-powered customer support chatbot for food ordering and delivery assistance. The chatbot is divided into two focused support experiences so that each conversation can be handled with the right context and workflow:
 
 1. **Food Support Chatbot** - helps customers with food, menu, and order-related questions.
@@ -75,27 +77,38 @@ Answer, action, or escalation
 - “One item is missing from my order.”
 - “I entered the wrong delivery address. What can I do?”
 
+## User Interface
+
+The interface includes:
+
+- A support inbox layout with sidebar navigation
+- A **Food delivery support** tab for orders, restaurants, and delivery questions
+- A **Transport support** tab for rides, routes, and travel questions
+- Agent status cards, conversation history, quick-reply chips, and a message composer
+- Responsive styling for desktop, tablet, and mobile screen sizes
+
+The two tabs are switched with native HTML controls and CSS. The message composer and quick replies are visual placeholders until application logic is added.
+
 ## Project Structure
 
 The implementation can be organized around the two chatbot responsibilities:
 
 ```text
 AI-chatbot/
-├── food-support/       # Food and menu-related support
-├── delivery-support/   # Delivery and post-order support
-├── shared/              # Common chatbot utilities and configuration
-└── readme.md
+├── index.html           # Static chatbot interface
+├── styles.css           # Layout, themes, and responsive styles
+└── readme.md            # Project documentation
 ```
 
-The exact directory structure may vary as the project grows. Shared functionality such as conversation handling, authentication, logging, and escalation should be reused by both chatbot experiences.
+Shared functionality such as conversation handling, authentication, logging, and escalation can be added when the application logic is introduced.
 
 ## Getting Started
 
 1. Clone or download the repository.
-2. Install the dependencies required by the implementation.
-3. Configure the required environment variables and service integrations.
-4. Start the chatbot application using the project’s configured development command.
-5. Test both food-support and delivery-support conversation flows.
+2. Open `index.html` directly in a browser, or serve the folder with any static web server.
+3. Select either support tab to view the corresponding chatbot interface.
+
+There are currently no dependencies, environment variables, or build steps.
 
 Before deploying, verify that the chatbot can safely handle unknown requests and route unresolved issues to a human support channel.
 

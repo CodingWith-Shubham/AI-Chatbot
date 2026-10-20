@@ -1,0 +1,147 @@
+:root {
+  --ink: #24232b;
+  --muted: #8c8b98;
+  --line: #e9e7ee;
+  --surface: #ffffff;
+  --canvas: #f8f8fb;
+  --purple: #6754e9;
+  --purple-soft: #f1efff;
+  --orange: #f58155;
+  --orange-soft: #fff1eb;
+  --green: #3cba78;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, a { font: inherit; }
+button { cursor: pointer; }
+
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 248px;
+  padding: 31px 18px 22px;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand { display: flex; align-items: center; gap: 11px; padding: 0 12px 50px; }
+.brand-mark {
+  width: 29px; height: 29px; border-radius: 9px;
+  display: grid; place-items: center; color: #fff;
+  background: var(--purple); font-size: 17px;
+  box-shadow: 0 6px 14px rgba(103, 84, 233, .22);
+}
+.brand-name { margin: 0; font: 700 20px "Space Grotesk", sans-serif; letter-spacing: -.8px; }
+.brand-name span { color: var(--purple); }
+.brand-caption { margin: 2px 0 0; color: #aaa9b5; font-size: 10px; letter-spacing: .4px; }
+.eyebrow, .intro-label {
+  margin: 0 12px 12px; color: #aaa9b5; font-size: 10px;
+  font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+}
+.sidebar-link {
+  display: flex; align-items: center; gap: 12px; height: 43px; padding: 0 12px;
+  margin: 3px 0; border-radius: 10px; color: #96949f; font-size: 13px;
+  text-decoration: none;
+}
+.sidebar-link.active { color: var(--purple); background: var(--purple-soft); font-weight: 600; }
+.sidebar-icon { width: 17px; text-align: center; color: currentColor; font-size: 18px; }
+.link-count { margin-left: auto; padding: 3px 7px; border-radius: 20px; color: var(--purple); background: #e4e0ff; font-size: 10px; }
+.sidebar-bottom { margin-top: auto; }
+.help-card { display: flex; align-items: center; gap: 9px; margin: 0 4px 25px; padding: 13px 10px; border: 1px solid #eeeef4; border-radius: 12px; background: #fbfbfd; }
+.help-icon { width: 25px; height: 25px; border-radius: 50%; display: grid; place-items: center; color: var(--purple); background: var(--purple-soft); font-weight: 700; }
+.help-card strong, .profile strong { display: block; font-size: 11px; }
+.help-card p, .profile p { margin: 2px 0 0; color: var(--muted); font-size: 10px; }
+.arrow { margin-left: auto; color: #aaa9b5; }
+.profile { display: flex; align-items: center; gap: 9px; padding: 17px 8px 0; border-top: 1px solid var(--line); }
+.profile .more { margin-left: auto; color: #aaa9b5; font-size: 11px; }
+
+.content { flex: 1; min-width: 0; }
+.topbar { height: 136px; padding: 31px 5.5% 27px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: #fff; }
+.breadcrumb { margin: 0 0 10px; color: #aaa9b5; font-size: 11px; }
+.breadcrumb span { margin: 0 7px; color: #d0ced7; }
+h1 { margin: 0; font: 600 26px "Space Grotesk", sans-serif; letter-spacing: -.7px; }
+.topbar-actions { display: flex; align-items: center; gap: 15px; }
+.icon-button, .quiet-button { border: 0; background: transparent; color: #aaa9b5; font-size: 20px; position: relative; }
+.notification-dot { position: absolute; top: 2px; right: 0; width: 5px; height: 5px; border: 1px solid white; border-radius: 50%; background: var(--orange); }
+.outline-button { padding: 10px 15px; border: 1px solid #dfdde7; border-radius: 9px; color: var(--ink); background: white; font-size: 12px; font-weight: 600; }
+
+.workspace { max-width: 930px; margin: 0 auto; padding: 42px 32px 30px; }
+.intro { margin-bottom: 22px; }
+.intro-label { margin: 0 0 5px; color: var(--ink); font-size: 12px; letter-spacing: .5px; }
+.intro-copy { margin: 0; color: var(--muted); font-size: 12px; }
+.agent-tabs input { position: absolute; opacity: 0; pointer-events: none; }
+.tab-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 17px; }
+.agent-tab { display: flex; align-items: center; gap: 12px; min-height: 75px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); cursor: pointer; transition: .2s ease; }
+.agent-tab:hover { border-color: #c9c4f9; }
+.tab-icon { width: 36px; height: 36px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 11px; font-size: 21px; }
+.food-tab .tab-icon { color: var(--orange); background: var(--orange-soft); }
+.transport-tab .tab-icon { color: var(--purple); background: var(--purple-soft); }
+.agent-tab strong { display: block; margin-bottom: 4px; font-size: 12px; }
+.agent-tab small { color: var(--muted); font-size: 10px; }
+.tab-status { margin-left: auto; align-self: flex-start; padding: 5px 7px; border-radius: 6px; color: var(--green); background: #ebfaf1; font-size: 9px; font-weight: 700; }
+#food-agent:checked ~ .tab-list .food-tab, #transport-agent:checked ~ .tab-list .transport-tab { border-color: var(--purple); box-shadow: 0 0 0 1px var(--purple); }
+
+.chat-panel { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: 0 15px 40px rgba(39, 35, 61, .05); }
+.transport-panel { display: none; }
+#transport-agent:checked ~ .transport-panel { display: block; }
+#transport-agent:checked ~ .food-panel { display: none; }
+.chat-header { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+.agent-heading { display: flex; align-items: center; gap: 11px; }
+.avatar { width: 37px; height: 37px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 12px; font-weight: 700; }
+.avatar-food { color: var(--orange); background: var(--orange-soft); }
+.avatar-transport { color: var(--purple); background: var(--purple-soft); }
+.avatar-user { color: #fff; background: var(--ink); font-size: 10px; }
+.small-avatar { width: 27px; height: 27px; border-radius: 9px; font-size: 13px; }
+.agent-heading h2 { margin: 0 0 4px; font-size: 13px; }
+.agent-heading p { margin: 0; color: var(--muted); font-size: 10px; }
+.online-dot { display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: var(--green); }
+.chat-body { min-height: 319px; padding: 20px 25px; background: #fdfdfe; }
+.date-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; color: #b4b2bd; font-size: 9px; }
+.date-divider::before, .date-divider::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+.message-row { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 13px; }
+.message-content { max-width: 72%; }
+.message-author { display: block; margin: 0 0 5px 2px; color: var(--muted); font-size: 9px; }
+.bubble { padding: 11px 14px; border-radius: 4px 13px 13px 13px; color: #5d5b68; background: #f0eff5; font-size: 11px; line-height: 1.55; }
+.user-message { justify-content: flex-end; }
+.user-message .message-author { text-align: right; margin-right: 2px; }
+.user-message .bubble { border-radius: 13px 4px 13px 13px; color: #fff; background: var(--purple); }
+.quick-replies { display: flex; gap: 7px; margin: 3px 0 19px 36px; flex-wrap: wrap; }
+.quick-replies button { padding: 8px 10px; border: 1px solid #d9d6e9; border-radius: 7px; color: var(--purple); background: #fff; font-size: 9px; }
+.composer { display: flex; align-items: center; gap: 11px; padding: 15px 19px; border-top: 1px solid var(--line); }
+.attach-button, .send-button { width: 28px; height: 28px; border: 0; border-radius: 8px; font-size: 19px; }
+.attach-button { color: #a8a6b2; background: #f1f0f5; }
+.send-button { color: #fff; background: var(--purple); }
+.fake-input { flex: 1; color: #b2b0ba; font-size: 11px; }
+.privacy-note { margin: 17px 0 0; color: #aaa9b5; text-align: center; font-size: 10px; }
+.privacy-note span { color: var(--purple); margin-right: 4px; }
+
+@media (max-width: 760px) {
+  .sidebar { width: 68px; padding: 24px 9px; }
+  .brand { padding: 0 10px 45px; }
+  .brand > div:not(.brand-mark), .sidebar-link:not(.active) .sidebar-icon + *, .sidebar-link .link-count, .eyebrow, .help-card, .profile > div:not(.avatar), .profile .more { display: none; }
+  .sidebar-link { justify-content: center; padding: 0; }
+  .sidebar-link .sidebar-icon { font-size: 19px; }
+  .profile { justify-content: center; padding: 17px 0 0; }
+  .topbar { height: auto; padding: 25px 6%; }
+  .outline-button span { display: none; }
+  .workspace { padding: 30px 18px; }
+}
+
+@media (max-width: 540px) {
+  .tab-list { grid-template-columns: 1fr; }
+  .chat-body { padding: 18px 15px; }
+  .message-content { max-width: 83%; }
+  .quick-replies { margin-left: 0; }
+  .topbar-actions .icon-button { display: none; }
+}

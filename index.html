@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Desk | AI Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <div>
+          <p class="brand-name">orbit<span>desk</span></p>
+          <p class="brand-caption">Customer support AI</p>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="eyebrow">Workspace</p>
+        <a class="sidebar-link active" href="#">
+          <span class="sidebar-icon">▦</span>
+          Support inbox
+          <span class="link-count">12</span>
+        </a>
+        <a class="sidebar-link" href="#">
+          <span class="sidebar-icon">◷</span>
+          Recent chats
+        </a>
+        <a class="sidebar-link" href="#">
+          <span class="sidebar-icon">♡</span>
+          Saved replies
+        </a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon">?</span>
+          <div>
+            <strong>Need a hand?</strong>
+            <p>View the support guide</p>
+          </div>
+          <span class="arrow">↗</span>
+        </div>
+        <div class="profile">
+          <div class="avatar avatar-user">AM</div>
+          <div>
+            <strong>Alex Morgan</strong>
+            <p>Support manager</p>
+          </div>
+          <span class="more">•••</span>
+        </div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Workspace <span>/</span> Support inbox</p>
+          <h1>How can we help?</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button" aria-label="Notifications">♧<span class="notification-dot"></span></button>
+          <button class="outline-button">＋ <span>New conversation</span></button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <div class="intro">
+          <p class="intro-label">Choose a support agent</p>
+          <p class="intro-copy">Select the team that best matches your request.</p>
+        </div>
+
+        <div class="agent-tabs">
+          <input type="radio" name="agent" id="food-agent" checked>
+          <input type="radio" name="agent" id="transport-agent">
+
+          <div class="tab-list" role="tablist" aria-label="Support agents">
+            <label class="agent-tab food-tab" for="food-agent" role="tab">
+              <span class="tab-icon">♨</span>
+              <span>
+                <strong>Food delivery support</strong>
+                <small>Orders, restaurants &amp; deliveries</small>
+              </span>
+              <span class="tab-status">Online</span>
+            </label>
+            <label class="agent-tab transport-tab" for="transport-agent" role="tab">
+              <span class="tab-icon">⌁</span>
+              <span>
+                <strong>Transport support</strong>
+                <small>Rides, routes &amp; travel help</small>
+              </span>
+              <span class="tab-status">Online</span>
+            </label>
+          </div>
+
+          <div class="chat-panel food-panel">
+            <div class="chat-header">
+              <div class="agent-heading">
+                <div class="avatar avatar-food">♨</div>
+                <div>
+                  <h2>Food delivery assistant</h2>
+                  <p><span class="online-dot"></span> Usually replies in under a minute</p>
+                </div>
+              </div>
+              <button class="quiet-button" aria-label="More options">•••</button>
+            </div>
+
+            <div class="chat-body">
+              <div class="date-divider"><span>Today, 10:42 AM</span></div>
+              <div class="message-row agent-message">
+                <div class="avatar avatar-food small-avatar">♨</div>
+                <div class="message-content">
+                  <span class="message-author">Food support</span>
+                  <div class="bubble">Hi Alex! I’m here to help with your food order. What can I take care of today?</div>
+                </div>
+              </div>
+              <div class="quick-replies">
+                <button>Track my order</button>
+                <button>Something is missing</button>
+                <button>Talk about a refund</button>
+              </div>
+              <div class="message-row user-message">
+                <div class="message-content">
+                  <span class="message-author">You</span>
+                  <div class="bubble">I’d like to know where my order is.</div>
+                </div>
+                <div class="avatar avatar-user small-avatar">AM</div>
+              </div>
+            </div>
+
+            <div class="composer">
+              <button class="attach-button" aria-label="Attach a file">＋</button>
+              <div class="fake-input">Write a message...</div>
+              <button class="send-button" aria-label="Send message">↑</button>
+            </div>
+          </div>
+
+          <div class="chat-panel transport-panel">
+            <div class="chat-header">
+              <div class="agent-heading">
+                <div class="avatar avatar-transport">⌁</div>
+                <div>
+                  <h2>Transport assistant</h2>
+                  <p><span class="online-dot"></span> Usually replies in under a minute</p>
+                </div>
+              </div>
+              <button class="quiet-button" aria-label="More options">•••</button>
+            </div>
+
+            <div class="chat-body">
+              <div class="date-divider"><span>Today, 10:42 AM</span></div>
+              <div class="message-row agent-message">
+                <div class="avatar avatar-transport small-avatar">⌁</div>
+                <div class="message-content">
+                  <span class="message-author">Transport support</span>
+                  <div class="bubble">Hello Alex! I can help with rides, routes, bookings, and travel questions. How can I help?</div>
+                </div>
+              </div>
+              <div class="quick-replies">
+                <button>Track my ride</button>
+                <button>Change a booking</button>
+                <button>Report an issue</button>
+              </div>
+              <div class="message-row user-message">
+                <div class="message-content">
+                  <span class="message-author">You</span>
+                  <div class="bubble">I need help with my journey.</div>
+                </div>
+                <div class="avatar avatar-user small-avatar">AM</div>
+              </div>
+            </div>
+
+            <div class="composer">
+              <button class="attach-button" aria-label="Attach a file">＋</button>
+              <div class="fake-input">Write a message...</div>
+              <button class="send-button" aria-label="Send message">↑</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="privacy-note"><span>✦</span> AI-generated responses may not always be accurate. Never share sensitive information.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
