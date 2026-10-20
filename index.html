@@ -140,7 +140,7 @@
             </div>
           </div>
 
-          <div class="chat-panel transport-panel">
+          <div class="chat-panel transport-panel" aria-label="Transport support chat">
             <div class="chat-header">
               <div class="agent-heading">
                 <div class="avatar avatar-transport">⌁</div>
@@ -152,7 +152,7 @@
               <button class="quiet-button" aria-label="More options">•••</button>
             </div>
 
-            <div class="chat-body">
+            <div class="chat-body transport-chat-body" aria-live="polite">
               <div class="date-divider"><span>Today, 10:42 AM</span></div>
               <div class="message-row agent-message">
                 <div class="avatar avatar-transport small-avatar">⌁</div>
@@ -175,10 +175,11 @@
               </div>
             </div>
 
-            <div class="composer">
-              <button class="attach-button" aria-label="Attach a file">＋</button>
-              <div class="fake-input">Write a message...</div>
-              <button class="send-button" aria-label="Send message">↑</button>
+            <div class="composer transport-composer">
+              <input class="transport-file-input" type="file" hidden>
+              <button class="attach-button transport-attach" type="button" aria-label="Attach a file">＋</button>
+              <input class="fake-input transport-input" type="text" placeholder="Write a message..." aria-label="Write a message">
+              <button class="send-button transport-send" type="button" aria-label="Send message">↑</button>
             </div>
           </div>
         </div>
@@ -187,5 +188,6 @@
       </div>
     </section>
   </main>
+  <script src="transport.js"></script>
 </body>
 </html>

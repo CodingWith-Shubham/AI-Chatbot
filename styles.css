@@ -123,6 +123,15 @@ h1 { margin: 0; font: 600 26px "Space Grotesk", sans-serif; letter-spacing: -.7p
 .attach-button { color: #a8a6b2; background: #f1f0f5; }
 .send-button { color: #fff; background: var(--purple); }
 .fake-input { flex: 1; color: #b2b0ba; font-size: 11px; }
+.transport-input {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+.transport-input::placeholder { color: #b2b0ba; opacity: 1; }
+.transport-input:focus { color: var(--ink); }
 .privacy-note { margin: 17px 0 0; color: #aaa9b5; text-align: center; font-size: 10px; }
 .privacy-note span { color: var(--purple); margin-right: 4px; }
 
